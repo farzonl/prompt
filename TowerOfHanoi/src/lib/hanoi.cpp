@@ -1,5 +1,6 @@
 #include "hanoi.h"
 #include <assert.h>
+#include <iomanip>
 #include <iostream>
 #include <math.h>
 
@@ -118,6 +119,8 @@ void Hanoi::printState() {
     int destItem = IndexableStack::item(i, dest.mDisks);
     int auxItem = IndexableStack::item(i, aux.mDisks);
 
-    std::cout << startItem << " " << destItem << " " << auxItem << std::endl;
+    std::cout << std::left << std::setw(start.mName.length() + 1) << startItem
+              << std::setw(dest.mName.length() + 1) << destItem
+              << std::setw(aux.mName.length() + 1) << auxItem << std::endl;
   }
 }
