@@ -1,6 +1,7 @@
 #include "hanoi.h"
 #include <assert.h>
 #include <iostream>
+#include <math.h>
 
 Rod::Rod(std::string name, int capacity) : mName(name), mCapacity(capacity) {}
 
@@ -43,7 +44,10 @@ void Hanoi::moveDisk(Rod &rod1, Rod &rod2) {
   std::string srcName = "";
   std::string destName = "";
   if (rod1.isEmpty() && rod2.isEmpty()) {
-    // TODO clean this up
+    // NOTE: This case should never hit
+    // defining it to make the else condition
+    // clear.
+    assert(false);
     return;
   } else if (rod1.isEmpty() && !rod2.isEmpty()) {
     diskValue = rod2.pop();
@@ -106,20 +110,6 @@ void Hanoi::printState() {
       return 0;
     }
   };
-  auto genDiskStack = [](int sz) {
-    std::string retStr = "";
-    for (int i = 1; i <= sz; i++) {
-      for (int space = 1; space <= sz - i; ++space) {
-        std::cout << "  ";
-      }
-      int star = 0;
-      while (star != 2 * i - 1) {
-        std::cout << "* ";
-        star++;
-      }
-      std::cout << "\n";
-    }
-  };
 
   std::cout << start.mName << " " << dest.mName << " " << aux.mName
             << std::endl;
@@ -130,10 +120,4 @@ void Hanoi::printState() {
 
     std::cout << startItem << " " << destItem << " " << auxItem << std::endl;
   }
-  std::cout << start.mName << std::endl;
-  genDiskStack(start.mDisks.size());
-  std::cout << dest.mName << std::endl;
-  genDiskStack(dest.mDisks.size());
-  std::cout << aux.mName << std::endl;
-  genDiskStack(aux.mDisks.size());
 }
