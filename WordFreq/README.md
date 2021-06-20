@@ -1,4 +1,15 @@
 # Word Frequency
+### Example
+![](pics/example.svg?sanitize=true)
+
+### Build Docs
+- #### Requirments
+        - Doxygen
+        - Graphviz
+```bash
+    cd WordFreq
+    doxygen
+```
 
 ### Build with Ninja
 ```bash

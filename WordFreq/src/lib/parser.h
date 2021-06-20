@@ -4,6 +4,11 @@
 #include <map> // we want an ordered map
 #include <string>
 
+/*!
+\brief   Parser class that tokenizes words and removes special characters.
+\details This class tokenizes words, counts word frequency and stores them
+          alphabetically in an in-memory data store.
+*/
 class Parser {
 private:
   static constexpr char delimeters[] = " \".,:;!?<>{}[]()_=+^%*&#";
@@ -23,6 +28,9 @@ public:
   friend std::ostream &operator<<(std::ostream &out, const Parser &aDis);
 };
 
+/*!
+\brief   StringHelper provides static helper functions to manipulate strings.
+*/
 class StringHelper {
   StringHelper() = delete;
 

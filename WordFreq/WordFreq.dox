@@ -1,0 +1,56 @@
+/*!
+	\mainpage WordFreq Overview
+	
+	\tableofcontents
+	
+	\section wordFreq-introduction Introduction to WordFreq
+	The WordFreq module supports the parsing and sorting alphabetically words in a text file.
+	The primary use case is to collect word frequency information locally per document 
+    aswell as across multiple documents.
+
+    \n
+	\section wordFreq-list WordFreq Classes
+	- \ref Parser - A class that parses and stores word frequency analytics.
+    - \ref StringHelper - A class that provides common string operations like lowering characters.
+
+    \n
+	\section wordFreq-example-simple Example Usage - parse a file and export the analytics.
+	\code{.cpp}
+    #include <iostream>
+    #include "lib/parser.h"
+
+    int main() {
+        std::string fileName;
+        std::cout << "Please enter a file name: ";
+        std::cin >> fileName;
+        Parser parser(fileName);
+        parser.parse();
+        parser.exportToFile();
+        return 0;
+    }
+    \endcode
+
+    \image html pics/docsExample1.svg
+
+    \n
+	\section wordFreq-example-simple2 Example Usage - parse multiple file and export the combinded analytics.
+	\code{.cpp}
+    #include <iostream>
+    #include "lib/parser.h"
+
+    int main() {
+        std::string fileName;
+        for(int i = 0; i < 3; i++) {
+            std::cout << "Please enter a file name: ";
+            std::cin >> fileName;
+            Parser parser(fileName);
+            parser.parse();
+        }
+        Parser::exportGlobal();
+        return 0;
+    }
+    \endcode
+    
+    \image html pics/docsExample2.svg
+*/
+

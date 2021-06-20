@@ -40,5 +40,8 @@ build/
 # Packages Folder
 packages/
 
+# Documentation
+*/Doxygen
+
 # MacOS
 .DS_Store

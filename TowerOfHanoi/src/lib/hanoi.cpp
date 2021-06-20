@@ -4,8 +4,21 @@
 #include <iostream>
 #include <math.h>
 
+// clang-format off
+/*!
+\brief   Initializes a Rod with a name and a capacity.
+\param	 [in] name - the name of the rod.
+\param	 [in] capacity - the maximum amount of disks allowed on this rod.
+*/
+// clang-format on
 Rod::Rod(std::string name, int capacity) : mName(name), mCapacity(capacity) {}
 
+// clang-format off
+/*!
+\brief   Checks if we have met the capacity limit.
+\return	 the status of reaching the capacity limit.
+*/
+// clang-format on
 bool Rod::isAtCapacity() { return mDisks.size() == mCapacity; }
 
 bool Rod::isEmpty() { return mDisks.size() == 0; }
@@ -16,6 +29,13 @@ void Rod::push(int diskValue) {
   }
 }
 
+// clang-format off
+/*!
+\brief   If the stack is not empty we will pop off the top disk.
+\details This function will assert if the stack is empty.
+\return	 The disk we are moving off the rod.
+*/
+// clang-format on
 int Rod::pop() {
   assert(!isEmpty());
   int topDiskValue = mDisks.top();
@@ -24,6 +44,14 @@ int Rod::pop() {
   ;
 }
 
+// clang-format off
+/*!
+\brief   Initializes a Hanoi class with the size of the problem and whether we want to know state.
+\details This constructor will also initalize the disks on the start rod and swap aux and dest rods on even # of disks.
+\param	 [in] disks - the number of disks that we want to solve the puzzle for.
+\param	 [in] printState - Determine if we want to print the state per move set.
+*/
+// clang-format on
 Hanoi::Hanoi(int disks, bool printState)
     : start("start", disks), dest("dest", disks), aux("aux", disks),
       mDisks(disks), mPrintState(printState) {
@@ -40,6 +68,14 @@ Hanoi::Hanoi(int disks, bool printState)
   }
 }
 
+// clang-format off
+/*!
+\brief   A function that moves disks from one rod to another.
+\details Thi is where most of the work of this algorithm is. Depending on whats on the top of a rod will determine which rod we move to.
+\param	 [in] rod1 - A rod we will want to move disks either too or off of depending on the top of the stack.
+\param	 [in] rod2 - A second rod we will want to move disks either too or off of depending on the top of the stack.
+*/
+// clang-format on
 void Hanoi::moveDisk(Rod &rod1, Rod &rod2) {
   int diskValue = 0;
   std::string srcName = "";
@@ -81,6 +117,13 @@ void Hanoi::moveDisk(Rod &rod1, Rod &rod2) {
             << destName << std::endl;
 }
 
+// clang-format off
+/*!
+\brief   A function that executes the number of disk moves and reports the move set.
+\details The Tower of Hanoi puzzle has a formulaic set of movement rules for fixed number of moves at 2^n -1. 
+         The solution is knowing which move to do. wich is determined by taking the modulo of the number of  rods (3).
+*/
+// clang-format on
 void Hanoi::execute() {
   for (int i = 1; i <= mRequiredMoves; i++) {
     printState();
@@ -99,6 +142,14 @@ void Hanoi::execute() {
   }
   printState();
 }
+
+// clang-format off
+/*!
+\brief   Prints the state of the Rods in the hanoi problem.
+\details This function makes the stack indexable. It achieves this by exposing 
+         the protected collection field.
+*/
+// clang-format on
 void Hanoi::printState() {
   if (!mPrintState) {
     return;

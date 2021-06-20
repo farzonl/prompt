@@ -1,0 +1,28 @@
+/*!
+	\mainpage Tower of Hanoi Overview
+	
+	\tableofcontents
+	
+	\section towerOfHanoi-introduction Introduction to Tower of Hanoi
+	The TowerOfHanoi module prints out the move set required to solve the Hanoi puzzle.
+	It can solve a puzzle with any number of disks. It can also print out a visual state of each step.
+	
+    \n
+	\section towerOfHanoi-list Tower of Hanoi Classes
+	- \ref Rod - A class that Represents the rod in the classic Hanoi problem as a stack.
+    - \ref Hanoi - A class that encapulates all the movement of disks in the Hanoi problem.
+    \n
+	\section towerOfHanoi-example-simple Example Usage - print the move set and states to solve Tower of Hanoi with two disks.
+	\code{.cpp}
+    #include "lib/hanoi.h"
+
+    int main() {
+        Hanoi hanoi(2, true);
+        hanoi.execute();
+        return 0;
+    }
+    \endcode
+
+    \image html pics/docsExample.svg
+*/
+

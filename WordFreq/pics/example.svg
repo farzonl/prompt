@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="terminal" baseProfile="full" viewBox="0 0 648 427" width="648" version="1.1">
+    <defs>
+        <termtosvg:template_settings xmlns:termtosvg="https://github.com/nbedos/termtosvg">
+            <termtosvg:screen_geometry columns="81" rows="25"/>
+            <termtosvg:animation type="css"/>
+        </termtosvg:template_settings>
+        <style type="text/css" id="generated-style"><![CDATA[#screen {
+                font-family: 'DejaVu Sans Mono', monospace;
+                font-style: normal;
+                font-size: 14px;
+            }
+
+        text {
+            dominant-baseline: text-before-edge;
+            white-space: pre;
+        }
+    
+            :root {
+                --animation-duration: 14133ms;
+            }
+
+            @keyframes roll {
+                0.000%{transform:translateY(0px)}
+4.210%{transform:translateY(-442px)}
+5.795%{transform:translateY(-884px)}
+7.550%{transform:translateY(-1326px)}
+9.078%{transform:translateY(-1768px)}
+11.795%{transform:translateY(-2210px)}
+15.411%{transform:translateY(-2652px)}
+16.826%{transform:translateY(-3094px)}
+20.449%{transform:translateY(-3536px)}
+20.477%{transform:translateY(-3978px)}
+33.822%{transform:translateY(-4420px)}
+33.836%{transform:translateY(-4862px)}
+40.664%{transform:translateY(-5304px)}
+41.626%{transform:translateY(-5746px)}
+43.268%{transform:translateY(-6188px)}
+49.664%{transform:translateY(-6630px)}
+54.475%{transform:translateY(-7072px)}
+56.216%{transform:translateY(-7514px)}
+63.129%{transform:translateY(-7956px)}
+63.157%{transform:translateY(-8398px)}
+63.164%{transform:translateY(-8840px)}
+81.872%{transform:translateY(-9282px)}
+83.627%{transform:translateY(-9724px)}
+90.073%{transform:translateY(-10166px)}
+91.375%{transform:translateY(-10608px)}
+92.903%{transform:translateY(-11050px)}
+92.924%{transform:translateY(-11492px)}
+100.000%{transform:translateY(-11492px)}
+            }
+
+            #screen_view {
+                animation-duration: 14133ms;
+                animation-iteration-count:infinite;
+                animation-name:roll;
+                animation-timing-function: steps(1,end);
+                animation-fill-mode: forwards;
+            }
+        ]]></style>
+        <style type="text/css" id="user-style">
+            /* The colors defined below are the default 16 colors used for rendering text of the terminal. Adjust
+               them as needed.
+               PowerShell colors based on https://en.wikipedia.org/wiki/ANSI_escape_code#Colors */
+            .foreground {fill: #cccccc;}
+            .background {fill: #0c0c0c;}
+            .color0 {fill: #0c0c0c;}
+            .color1 {fill: #c50f1f;}
+            .color2 {fill: #13a10e;}
+            .color3 {fill: #c19c00;}
+            .color4 {fill: #0037da;}
+            .color5 {fill: #881798;}
+            .color6 {fill: #3a96dd;}
+            .color7 {fill: #cccccc;}
+            .color8 {fill: #767676;}
+            .color9 {fill: #e74856;}
+            .color10 {fill: #16c60c;}
+            .color11 {fill: #f9f1a5;}
+            .color12 {fill: #3b78ff;}
+            .color13 {fill: #b4009e;}
+            .color14 {fill: #61d6d6;}
+            .color15 {fill: #f2f2f2;}
+        </style>
+    </defs>
+    <svg id="screen" width="648" height="425" viewBox="0 0 648 425" preserveAspectRatio="xMidYMin slice">
+    <rect class="background" height="100%" width="100%" x="0" y="0"/><defs><g id="g1"><text x="0" textLength="80" class="foreground">bash-3.2$ </text><text x="80" textLength="8" class="background"> </text></g><g id="g2"><text x="0" textLength="88" class="foreground">bash-3.2$ c</text><text x="88" textLength="8" class="background"> </text></g><g id="g3"><text x="0" textLength="96" class="foreground">bash-3.2$ ca</text><text x="96" textLength="8" class="background"> </text></g><g id="g4"><text x="0" textLength="104" class="foreground">bash-3.2$ cat</text><text x="104" textLength="8" class="background"> </text></g><g id="g5"><text x="0" textLength="112" class="foreground">bash-3.2$ cat </text><text x="112" textLength="8" class="background"> </text></g><g id="g6"><text x="0" textLength="120" class="foreground">bash-3.2$ cat f</text><text x="120" textLength="8" class="background"> </text></g><g id="g7"><text x="0" textLength="128" class="foreground">bash-3.2$ cat fo</text><text x="128" textLength="8" class="background"> </text></g><g id="g8"><text x="0" textLength="176" class="foreground">bash-3.2$ cat fox.txt </text><text x="176" textLength="8" class="background"> </text></g><g id="g9"><text x="0" textLength="176" class="foreground">bash-3.2$ cat fox.txt </text></g><g id="g10"><text x="0" textLength="8" class="background"> </text></g><g id="g11"><text x="0" textLength="352" class="foreground">The quick brown fox jumps over the lazy dog.</text></g><g id="g12"><text x="0" textLength="112" class="foreground">bash-3.2$ ./Wo</text><text x="112" textLength="8" class="background"> </text></g><g id="g13"><text x="0" textLength="168" class="foreground">bash-3.2$ ./WordFreq </text><text x="168" textLength="8" class="background"> </text></g><g id="g14"><text x="0" textLength="176" class="foreground">bash-3.2$ ./WordFreq f</text><text x="176" textLength="8" class="background"> </text></g><g id="g15"><text x="0" textLength="184" class="foreground">bash-3.2$ ./WordFreq fo</text><text x="184" textLength="8" class="background"> </text></g><g id="g16"><text x="0" textLength="192" class="foreground">bash-3.2$ ./WordFreq fox</text><text x="192" textLength="8" class="background"> </text></g><g id="g17"><text x="0" textLength="200" class="foreground">bash-3.2$ ./WordFreq fox.</text><text x="200" textLength="8" class="background"> </text></g><g id="g18"><text x="0" textLength="208" class="foreground">bash-3.2$ ./WordFreq fox.t</text><text x="208" textLength="8" class="background"> </text></g><g id="g19"><text x="0" textLength="232" class="foreground">bash-3.2$ ./WordFreq fox.txt </text><text x="232" textLength="8" class="background"> </text></g><g id="g20"><text x="0" textLength="232" class="foreground">bash-3.2$ ./WordFreq fox.txt </text></g><g id="g21"><text x="0" textLength="80" class="foreground">{brown: 1}</text></g><g id="g22"><text x="0" textLength="64" class="foreground">{dog: 1}</text></g><g id="g23"><text x="0" textLength="64" class="foreground">{fox: 1}</text></g><g id="g24"><text x="0" textLength="80" class="foreground">{jumps: 1}</text></g><g id="g25"><text x="0" textLength="72" class="foreground">{lazy: 1}</text></g><g id="g26"><text x="0" textLength="72" class="foreground">{over: 1}</text></g><g id="g27"><text x="0" textLength="80" class="foreground">{quick: 1}</text></g><g id="g28"><text x="0" textLength="64" class="foreground">{the: 2}</text></g><g id="g29"><text x="0" textLength="88" class="foreground">bash-3.2$ e</text><text x="88" textLength="8" class="background"> </text></g><g id="g30"><text x="0" textLength="96" class="foreground">bash-3.2$ ex</text><text x="96" textLength="8" class="background"> </text></g><g id="g31"><text x="0" textLength="104" class="foreground">bash-3.2$ exi</text><text x="104" textLength="8" class="background"> </text></g><g id="g32"><text x="0" textLength="112" class="foreground">bash-3.2$ exit</text><text x="112" textLength="8" class="background"> </text></g><g id="g33"><text x="0" textLength="112" class="foreground">bash-3.2$ exit</text></g><g id="g34"><text x="0" textLength="32" class="foreground">exit</text></g></defs><g id="screen_view"><g><rect x="80" y="0" width="8" height="17" class="foreground"/><use xlink:href="#g1" y="0"/></g><g><rect x="88" y="442" width="8" height="17" class="foreground"/><use xlink:href="#g2" y="442"/></g><g><rect x="96" y="884" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="884"/></g><g><rect x="104" y="1326" width="8" height="17" class="foreground"/><use xlink:href="#g4" y="1326"/></g><g><rect x="112" y="1768" width="8" height="17" class="foreground"/><use xlink:href="#g5" y="1768"/></g><g><rect x="120" y="2210" width="8" height="17" class="foreground"/><use xlink:href="#g6" y="2210"/></g><g><rect x="128" y="2652" width="8" height="17" class="foreground"/><use xlink:href="#g7" y="2652"/></g><g><rect x="176" y="3094" width="8" height="17" class="foreground"/><use xlink:href="#g8" y="3094"/></g><g><use xlink:href="#g9" y="3536"/><rect x="0" y="3553" width="8" height="17" class="foreground"/><use xlink:href="#g10" y="3553"/></g><g><use xlink:href="#g9" y="3978"/><use xlink:href="#g11" y="3995"/><rect x="80" y="4012" width="8" height="17" class="foreground"/><use xlink:href="#g1" y="4012"/></g><g><use xlink:href="#g9" y="4420"/><use xlink:href="#g11" y="4437"/><rect x="112" y="4454" width="8" height="17" class="foreground"/><use xlink:href="#g12" y="4454"/></g><g><use xlink:href="#g9" y="4862"/><use xlink:href="#g11" y="4879"/><rect x="168" y="4896" width="8" height="17" class="foreground"/><use xlink:href="#g13" y="4896"/></g><g><use xlink:href="#g9" y="5304"/><use xlink:href="#g11" y="5321"/><rect x="176" y="5338" width="8" height="17" class="foreground"/><use xlink:href="#g14" y="5338"/></g><g><use xlink:href="#g9" y="5746"/><use xlink:href="#g11" y="5763"/><rect x="184" y="5780" width="8" height="17" class="foreground"/><use xlink:href="#g15" y="5780"/></g><g><use xlink:href="#g9" y="6188"/><use xlink:href="#g11" y="6205"/><rect x="192" y="6222" width="8" height="17" class="foreground"/><use xlink:href="#g16" y="6222"/></g><g><use xlink:href="#g9" y="6630"/><use xlink:href="#g11" y="6647"/><rect x="200" y="6664" width="8" height="17" class="foreground"/><use xlink:href="#g17" y="6664"/></g><g><use xlink:href="#g9" y="7072"/><use xlink:href="#g11" y="7089"/><rect x="208" y="7106" width="8" height="17" class="foreground"/><use xlink:href="#g18" y="7106"/></g><g><use xlink:href="#g9" y="7514"/><use xlink:href="#g11" y="7531"/><rect x="232" y="7548" width="8" height="17" class="foreground"/><use xlink:href="#g19" y="7548"/></g><g><use xlink:href="#g9" y="7956"/><use xlink:href="#g11" y="7973"/><use xlink:href="#g20" y="7990"/><rect x="0" y="8007" width="8" height="17" class="foreground"/><use xlink:href="#g10" y="8007"/></g><g><use xlink:href="#g9" y="8398"/><use xlink:href="#g11" y="8415"/><use xlink:href="#g20" y="8432"/><use xlink:href="#g21" y="8449"/><use xlink:href="#g22" y="8466"/><use xlink:href="#g23" y="8483"/><use xlink:href="#g24" y="8500"/><use xlink:href="#g25" y="8517"/><use xlink:href="#g26" y="8534"/><use xlink:href="#g27" y="8551"/><use xlink:href="#g28" y="8568"/><rect x="0" y="8585" width="8" height="17" class="foreground"/><use xlink:href="#g10" y="8585"/></g><g><use xlink:href="#g9" y="8840"/><use xlink:href="#g11" y="8857"/><use xlink:href="#g20" y="8874"/><use xlink:href="#g21" y="8891"/><use xlink:href="#g22" y="8908"/><use xlink:href="#g23" y="8925"/><use xlink:href="#g24" y="8942"/><use xlink:href="#g25" y="8959"/><use xlink:href="#g26" y="8976"/><use xlink:href="#g27" y="8993"/><use xlink:href="#g28" y="9010"/><rect x="80" y="9027" width="8" height="17" class="foreground"/><use xlink:href="#g1" y="9027"/></g><g><use xlink:href="#g9" y="9282"/><use xlink:href="#g11" y="9299"/><use xlink:href="#g20" y="9316"/><use xlink:href="#g21" y="9333"/><use xlink:href="#g22" y="9350"/><use xlink:href="#g23" y="9367"/><use xlink:href="#g24" y="9384"/><use xlink:href="#g25" y="9401"/><use xlink:href="#g26" y="9418"/><use xlink:href="#g27" y="9435"/><use xlink:href="#g28" y="9452"/><rect x="88" y="9469" width="8" height="17" class="foreground"/><use xlink:href="#g29" y="9469"/></g><g><use xlink:href="#g9" y="9724"/><use xlink:href="#g11" y="9741"/><use xlink:href="#g20" y="9758"/><use xlink:href="#g21" y="9775"/><use xlink:href="#g22" y="9792"/><use xlink:href="#g23" y="9809"/><use xlink:href="#g24" y="9826"/><use xlink:href="#g25" y="9843"/><use xlink:href="#g26" y="9860"/><use xlink:href="#g27" y="9877"/><use xlink:href="#g28" y="9894"/><rect x="96" y="9911" width="8" height="17" class="foreground"/><use xlink:href="#g30" y="9911"/></g><g><use xlink:href="#g9" y="10166"/><use xlink:href="#g11" y="10183"/><use xlink:href="#g20" y="10200"/><use xlink:href="#g21" y="10217"/><use xlink:href="#g22" y="10234"/><use xlink:href="#g23" y="10251"/><use xlink:href="#g24" y="10268"/><use xlink:href="#g25" y="10285"/><use xlink:href="#g26" y="10302"/><use xlink:href="#g27" y="10319"/><use xlink:href="#g28" y="10336"/><rect x="104" y="10353" width="8" height="17" class="foreground"/><use xlink:href="#g31" y="10353"/></g><g><use xlink:href="#g9" y="10608"/><use xlink:href="#g11" y="10625"/><use xlink:href="#g20" y="10642"/><use xlink:href="#g21" y="10659"/><use xlink:href="#g22" y="10676"/><use xlink:href="#g23" y="10693"/><use xlink:href="#g24" y="10710"/><use xlink:href="#g25" y="10727"/><use xlink:href="#g26" y="10744"/><use xlink:href="#g27" y="10761"/><use xlink:href="#g28" y="10778"/><rect x="112" y="10795" width="8" height="17" class="foreground"/><use xlink:href="#g32" y="10795"/></g><g><use xlink:href="#g9" y="11050"/><use xlink:href="#g11" y="11067"/><use xlink:href="#g20" y="11084"/><use xlink:href="#g21" y="11101"/><use xlink:href="#g22" y="11118"/><use xlink:href="#g23" y="11135"/><use xlink:href="#g24" y="11152"/><use xlink:href="#g25" y="11169"/><use xlink:href="#g26" y="11186"/><use xlink:href="#g27" y="11203"/><use xlink:href="#g28" y="11220"/><use xlink:href="#g33" y="11237"/><rect x="0" y="11254" width="8" height="17" class="foreground"/><use xlink:href="#g10" y="11254"/></g><g><use xlink:href="#g9" y="11492"/><use xlink:href="#g11" y="11509"/><use xlink:href="#g20" y="11526"/><use xlink:href="#g21" y="11543"/><use xlink:href="#g22" y="11560"/><use xlink:href="#g23" y="11577"/><use xlink:href="#g24" y="11594"/><use xlink:href="#g25" y="11611"/><use xlink:href="#g26" y="11628"/><use xlink:href="#g27" y="11645"/><use xlink:href="#g28" y="11662"/><use xlink:href="#g33" y="11679"/><use xlink:href="#g34" y="11696"/><rect x="0" y="11713" width="8" height="17" class="foreground"/><use xlink:href="#g10" y="11713"/></g></g></svg>
+</svg>

@@ -3,6 +3,12 @@
 #include <stack>
 #include <string>
 
+/*!
+\brief   Rod is a class to maintains state about disk positions.
+\details This class essentially is a wrapper around stack, to enforce a
+capacity. and enforce inputs. Its use is to maintain state when we are moving
+disks.
+*/
 class Rod {
   int mCapacity;
   std::string mName;
@@ -17,6 +23,10 @@ public:
   friend class Hanoi;
 };
 
+/*!
+\brief   Hanoi is a class that takes the action of moving disks between rods.
+         It does this by encapsulates Rods for start, destination, and auxilary.
+*/
 class Hanoi {
   Rod start, dest, aux;
   int mRequiredMoves;

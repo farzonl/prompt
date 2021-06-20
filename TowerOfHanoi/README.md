@@ -1,5 +1,25 @@
 # Tower of Hanoi
 
+### Example
+![](pics/example.svg?sanitize=true)
+
+### Usage
+```bash
+./TowerOfHanoi
+./TowerOfHanoi <integer| # of disks>
+./TowerOfHanoi <integer| # of disks> -print_state
+./TowerOfHanoi -h
+```
+### Build Docs
+- #### Requirments
+        - Doxygen
+        - Graphviz
+```bash
+    cd TowerOfHanoi
+    doxygen
+```
+
+
 ### Build with Ninja
 ```bash
 cmake -G Ninja -B build
