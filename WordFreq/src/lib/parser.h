@@ -3,6 +3,7 @@
 #include <iostream>
 #include <map> // we want an ordered map
 #include <string>
+#include <vector>
 
 /*!
 \brief   Parser class that tokenizes words and removes special characters.
@@ -12,20 +13,31 @@
 class Parser {
 private:
   static constexpr char delimeters[] = " \".,:;!?<>{}[]()_=+^%*&#";
-  std::string outputFilePath;
-  std::string inputFilePath;
-  std::map<std::string, size_t> localFreqencyMap;
-  static std::map<std::string, size_t> globalFreqencyMap;
+  std::string mOutputFilePath;
+  std::string mInputFilePath;
+  std::map<std::string, size_t> *mGlobalFreqencyMap;
+  std::map<std::string, size_t> mLocalFreqencyMap;
   void addToMap(std::string word, std::map<std::string, size_t> &freqencyMap);
   void addToMap(std::string word);
   void parseLine(const std::string &line);
 
 public:
-  Parser(const std::string &path);
+  Parser(const std::string &path,
+         std::map<std::string, size_t> *globalFreqencyMap = nullptr);
   bool parse();
-  static void exportGlobal(std::ostream &out = std::cout);
   void exportToFile();
   friend std::ostream &operator<<(std::ostream &out, const Parser &aDis);
+};
+
+/*!
+\brief  Common data structures needed to support cross file frequency analysis.
+\details Note: No effort was taken to make globalFreqencyMap thread safe.
+         Parsers are intended to run sequentially.
+*/
+struct ParserCollection {
+  std::map<std::string, size_t> globalFreqencyMap;
+  std::vector<Parser> parsers;
+  void exportGlobal(std::ostream &out = std::cout);
 };
 
 /*!
@@ -47,6 +59,6 @@ std::ostream &operator<<(std::ostream &os, const std::map<K, V> &m) {
 }
 
 inline std::ostream &operator<<(std::ostream &out, const Parser &parser) {
-  out << parser.localFreqencyMap << std::endl;
+  out << parser.mLocalFreqencyMap;
   return out;
 }

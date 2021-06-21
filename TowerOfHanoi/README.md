@@ -10,6 +10,10 @@
 ./TowerOfHanoi <integer| # of disks> -print_state
 ./TowerOfHanoi -h
 ```
+#### Flags
+- print_state prints the a visual state representation.
+- h this is a help flag
+
 ### Build Docs
 - #### Requirments
         - Doxygen
@@ -25,6 +29,10 @@
 cmake -G Ninja -B build
 ninja -C./build
 ```
+
+## Docker Build & Run
+- build: `docker build -t hanoi:latest .`
+- run: `docker run  --name hanoi_vm -it hanoi:latest`
 
 ### Building on Windows 
 - Using Ninja

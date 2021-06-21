@@ -1,7 +1,6 @@
 #include "hanoi.h"
 #include <assert.h>
 #include <iomanip>
-#include <iostream>
 #include <math.h>
 
 // clang-format off
@@ -74,9 +73,10 @@ Hanoi::Hanoi(int disks, bool printState)
 \details Thi is where most of the work of this algorithm is. Depending on whats on the top of a rod will determine which rod we move to.
 \param	 [in] rod1 - A rod we will want to move disks either too or off of depending on the top of the stack.
 \param	 [in] rod2 - A second rod we will want to move disks either too or off of depending on the top of the stack.
+\param	 [in] out The out stream
 */
 // clang-format on
-void Hanoi::moveDisk(Rod &rod1, Rod &rod2) {
+void Hanoi::moveDisk(Rod &rod1, Rod &rod2, std::ostream &out) {
   int diskValue = 0;
   std::string srcName = "";
   std::string destName = "";
@@ -113,8 +113,8 @@ void Hanoi::moveDisk(Rod &rod1, Rod &rod2) {
       rod2.push(rod1Top);
     }
   }
-  std::cout << "Move disk value " << diskValue << " From " << srcName << " to "
-            << destName << std::endl;
+  out << "Move disk value " << diskValue << " From " << srcName << " to "
+      << destName << std::endl;
 }
 
 // clang-format off
@@ -122,25 +122,26 @@ void Hanoi::moveDisk(Rod &rod1, Rod &rod2) {
 \brief   A function that executes the number of disk moves and reports the move set.
 \details The Tower of Hanoi puzzle has a formulaic set of movement rules for fixed number of moves at 2^n -1. 
          The solution is knowing which move to do. wich is determined by taking the modulo of the number of  rods (3).
+\param	 [in] out The out stream
 */
 // clang-format on
-void Hanoi::execute() {
+void Hanoi::execute(std::ostream &out) {
   for (int i = 1; i <= mRequiredMoves; i++) {
-    printState();
+    printState(out);
     int rodChosen = i % 3;
     switch (rodChosen) {
     case 0:
-      moveDisk(aux, dest);
+      moveDisk(aux, dest, out);
       break;
     case 1:
-      moveDisk(start, dest);
+      moveDisk(start, dest, out);
       break;
     case 2:
-      moveDisk(start, aux);
+      moveDisk(start, aux, out);
       break;
     }
   }
-  printState();
+  printState(out);
 }
 
 // clang-format off
@@ -150,7 +151,7 @@ void Hanoi::execute() {
          the protected collection field.
 */
 // clang-format on
-void Hanoi::printState() {
+void Hanoi::printState(std::ostream &out) {
   if (!mPrintState) {
     return;
   }
@@ -163,15 +164,14 @@ void Hanoi::printState() {
     }
   };
 
-  std::cout << start.mName << " " << dest.mName << " " << aux.mName
-            << std::endl;
+  out << start.mName << " " << dest.mName << " " << aux.mName << std::endl;
   for (int i = mDisks - 1; i >= 0; i--) {
     int startItem = IndexableStack::item(i, start.mDisks);
     int destItem = IndexableStack::item(i, dest.mDisks);
     int auxItem = IndexableStack::item(i, aux.mDisks);
 
-    std::cout << std::left << std::setw(start.mName.length() + 1) << startItem
-              << std::setw(dest.mName.length() + 1) << destItem
-              << std::setw(aux.mName.length() + 1) << auxItem << std::endl;
+    out << std::left << std::setw(start.mName.length() + 1) << startItem
+        << std::setw(dest.mName.length() + 1) << destItem
+        << std::setw(aux.mName.length() + 1) << auxItem << std::endl;
   }
 }

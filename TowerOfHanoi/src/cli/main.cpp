@@ -15,17 +15,19 @@ int main(int argc, char *argv[]) {
   int disks = 0;
   bool printState = false;
   int printStateIndex = 0;
+  const std::string helpFlag("-h");
+  const std::string stateFlag("-print_state");
   if (argc > 3) {
     printUsage();
     return 0;
   }
 
   for (int i = 1; i < argc; i++) {
-    if (strcmp(argv[i], "-print_state") == 0) {
+    if (stateFlag == argv[i]) {
       printState = true;
       printStateIndex = i;
     }
-    if (strcmp(argv[i], "-h") == 0) {
+    if (helpFlag == argv[i]) {
       printUsage();
       return 0;
     }

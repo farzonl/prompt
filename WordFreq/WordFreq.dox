@@ -11,6 +11,7 @@
     \n
 	\section wordFreq-list WordFreq Classes
 	- \ref Parser - A class that parses and stores word frequency analytics.
+    - \ref ParserCollection - A class that holds collection types needed to parse multiple files.
     - \ref StringHelper - A class that provides common string operations like lowering characters.
 
     \n
@@ -39,14 +40,15 @@
     #include "lib/parser.h"
 
     int main() {
+        ParserCollection parserCollection;
         std::string fileName;
         for(int i = 0; i < 3; i++) {
             std::cout << "Please enter a file name: ";
             std::cin >> fileName;
-            Parser parser(fileName);
+            Parser parser(fileName, &parserCollection.globalFreqencyMap);
             parser.parse();
         }
-        Parser::exportGlobal();
+        parserCollection.exportGlobal();
         return 0;
     }
     \endcode

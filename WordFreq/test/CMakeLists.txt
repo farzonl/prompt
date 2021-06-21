@@ -9,7 +9,10 @@ include_directories(${CMAKE_SOURCE_DIR}/packages/
                     ${CMAKE_SOURCE_DIR}/src/lib
 )
 
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/files
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 add_executable(${PROJECT_NAME}
                test.cpp
+               ${CMAKE_SOURCE_DIR}/src/lib/parser.cpp
 )

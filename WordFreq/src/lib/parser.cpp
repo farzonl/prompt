@@ -3,15 +3,15 @@
 #include <fstream>
 #include <sstream>
 
-std::map<std::string, size_t> Parser::globalFreqencyMap;
-
 // clang-format off
 /*!
 \brief   Initializes a Parser with an input and export file.
 */
 // clang-format on
-Parser::Parser(const std::string &path) : inputFilePath(path) {
-  outputFilePath = inputFilePath.substr(0, inputFilePath.find(".")) + ".out";
+Parser::Parser(const std::string &path,
+               std::map<std::string, size_t> *globalFreqencyMap)
+    : mInputFilePath(path), mGlobalFreqencyMap(globalFreqencyMap) {
+  mOutputFilePath = mInputFilePath.substr(0, mInputFilePath.find(".")) + ".out";
 }
 
 // clang-format off
@@ -21,7 +21,7 @@ Parser::Parser(const std::string &path) : inputFilePath(path) {
 */
 // clang-format on
 bool Parser::parse() {
-  std::ifstream file(inputFilePath);
+  std::ifstream file(mInputFilePath);
   if (!file.is_open()) {
     // Error couldn't open the file
     return false;
@@ -72,11 +72,13 @@ void StringHelper::toLower(std::string &word) {
 */
 // clang-format on
 void Parser::addToMap(std::string word) {
-  addToMap(word, localFreqencyMap);
+  addToMap(word, mLocalFreqencyMap);
   // We have a choice here we can merge the
   // localFreqencyMaps in post or we can just
   // have a global one.
-  addToMap(word, globalFreqencyMap);
+  if (mGlobalFreqencyMap != nullptr) {
+    addToMap(word, *mGlobalFreqencyMap);
+  }
 }
 
 // clang-format off
@@ -98,20 +100,22 @@ void Parser::addToMap(std::string word,
 
 // clang-format off
 /*!
+\brief    A function that exports the per parser frequency map.
+*/
+// clang-format on
+void Parser::exportToFile() {
+  std::ofstream ofs(mOutputFilePath, std::ios_base::out);
+  ofs << *this;
+  ofs.close();
+}
+
+// clang-format off
+/*!
 \brief   A function that exports the combined frequency map.
 \param	 [in] out The out stream we want to export the global frequency map. 
           This parameter allows one to use a file stream instead of the default iostream. 
 */
 // clang-format on
-void Parser::exportGlobal(std::ostream &out) { out << globalFreqencyMap; }
-
-// clang-format off
-/*!
-\brief    A function that exports the per parser frequency map.
-*/
-// clang-format on
-void Parser::exportToFile() {
-  std::ofstream ofs(outputFilePath, std::ios_base::out);
-  ofs << *this;
-  ofs.close();
+void ParserCollection::exportGlobal(std::ostream &out) {
+  out << globalFreqencyMap;
 }

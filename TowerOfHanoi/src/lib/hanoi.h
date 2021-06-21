@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <stack>
 #include <string>
 
@@ -32,10 +33,10 @@ class Hanoi {
   int mRequiredMoves;
   int mDisks;
   bool mPrintState;
-  void moveDisk(Rod &src, Rod &dest);
-  void printState();
+  void moveDisk(Rod &src, Rod &dest, std::ostream &out);
+  void printState(std::ostream &out);
 
 public:
   Hanoi(int disks, bool printState);
-  void execute();
+  void execute(std::ostream &out = std::cout);
 };

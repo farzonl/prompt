@@ -12,4 +12,5 @@ include_directories(${CMAKE_SOURCE_DIR}/packages/
 
 add_executable(${PROJECT_NAME}
                test.cpp
+               ${CMAKE_SOURCE_DIR}/src/lib/hanoi.cpp
 )
