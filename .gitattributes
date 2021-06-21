@@ -8,6 +8,7 @@
 #pictures
 *.jpg   -text
 *.ppm   -text
+*.png   -text
 
 # Sources
 *.c     text diff=c
