@@ -1,9 +1,9 @@
 project(${CMAKE_PROJECT_NAME}_TEST)
 
-download_file(https://github.com/catchorg/Catch2/releases/download/v2.13.8/catch.hpp
-              ${CMAKE_SOURCE_DIR}/packages/catch2/catch.hpp
+download_file(https://raw.githubusercontent.com/onqtam/doctest/2.4.6/doctest/doctest.h 
+              ${CMAKE_SOURCE_DIR}/packages/doctest/doctest.h
               MD5
-              e45f70693208dca2b6813a078e3e64eb)
+              1494db8a28035bcf6caeea817c4b2b65)
 
 include_directories(${CMAKE_SOURCE_DIR}/packages/
                     ${CMAKE_SOURCE_DIR}/src/lib

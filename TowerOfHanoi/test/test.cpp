@@ -1,17 +1,17 @@
-#define CATCH_CONFIG_MAIN
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
 #include "hanoi.h"
-#include <catch2/catch.hpp>
+#include <doctest/doctest.h>
 #include <sstream>
 
-TEST_CASE("Test Capacity", "[Rod]") {
+TEST_CASE("Test Capacity") {
   Rod rod("", 1);
   REQUIRE(rod.isAtCapacity() == false);
   rod.push(1);
   REQUIRE(rod.isAtCapacity());
 }
 
-TEST_CASE("Test empty", "[Rod]") {
+TEST_CASE("Test empty") {
   Rod rod("", 1);
   rod.push(1);
   REQUIRE(rod.isEmpty() == false);
@@ -19,7 +19,7 @@ TEST_CASE("Test empty", "[Rod]") {
   REQUIRE(rod.isEmpty());
 }
 
-TEST_CASE("Test order", "[Rod]") {
+TEST_CASE("Test order") {
   Rod rod("", 3);
   rod.push(3);
   rod.push(2);
@@ -29,7 +29,7 @@ TEST_CASE("Test order", "[Rod]") {
   REQUIRE(rod.pop() == 3);
 }
 
-TEST_CASE("Test move set", "[Rod][Hanoi]") {
+TEST_CASE("Test move set") {
   std::stringstream ssBaseline;
   int diskvalues[] = {1, 2, 1, 3, 1, 2, 1};
   std::string fromNames[] = {"start", "start", "dest", "start",

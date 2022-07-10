@@ -1,7 +1,7 @@
-#define CATCH_CONFIG_MAIN
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
 #include "parser.h"
-#include <catch2/catch.hpp>
+#include <doctest/doctest.h>
 #include <map>
 #include <sstream>
 
@@ -57,7 +57,7 @@ std::string getDirectory() {
 
 #endif
 
-TEST_CASE("Test One Parser", "[Parser]") {
+TEST_CASE("Test One Parser") {
   Parser parser(getDirectory() + "files/dickens.txt");
   std::map<std::string, int> baselineMap = {
       {"best", 1},  {"it", 2},  {"of", 2},   {"the", 2},
@@ -70,8 +70,7 @@ TEST_CASE("Test One Parser", "[Parser]") {
   REQUIRE(ssBaseline.str() == ss.str());
 }
 
-TEST_CASE("Test One Parser with ParserCollection",
-          "[Parser][ParserCollection]") {
+TEST_CASE("Test One Parser with ParserCollection") {
   ParserCollection parserCollection;
   Parser parser(getDirectory() + "files/fox.txt",
                 &parserCollection.globalFreqencyMap);
@@ -88,7 +87,7 @@ TEST_CASE("Test One Parser with ParserCollection",
   REQUIRE(ssBaseline.str() == ss.str());
 }
 
-TEST_CASE("Test Multiple Parser", "[Parser][ParserCollection]") {
+TEST_CASE("Test Multiple Parser") {
   ParserCollection parserCollection;
   parserCollection.parsers = {Parser(getDirectory() + "files/churchill.txt",
                                      &parserCollection.globalFreqencyMap),
